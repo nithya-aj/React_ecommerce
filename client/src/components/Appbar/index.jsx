@@ -14,6 +14,10 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
+import DropdownButton from '../DropdownButton.js';
+import { AiOutlineHeart } from "react-icons/ai";
+import { RiShoppingBasketLine } from "react-icons/ri";
+import { Button } from '@mui/joy';
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -155,32 +159,35 @@ const Appbar = () => {
     );
 
     return (
-        <Box sx={{ flexGrow: 1 }}>
-            <AppBar position="static">
+        <Box sx={{ flexGrow: 1, py:'2rem'}} >
+            <AppBar position="static" color="transparent" elevation={0} >
                 <Toolbar>
                     <Typography
                         variant="h5"
                         noWrap
                         component="div"
-                        sx={{ display: { xs: 'none', sm: 'block' }, fontWeight:'600' }}
+                        sx={{ display: { xs: 'none', sm: 'block' }, fontWeight:'600' , padding:'1rem', marginRight:'2rem'}}
                     >
                         logoipsum
                     </Typography>
-                    <Search>
-                        <SearchIconWrapper>
-                            <SearchIcon />
-                        </SearchIconWrapper>
+
+                    <DropdownButton placeholder='Classifieds' />
+
+                    <Search sx={{display:'flex', justifyContent:'flex-end', backgroundColor:'#F8F8F8', width:'2rem',
+                    "&:hover": {backgroundColor:'#e0dede'}    }}>
                         <StyledInputBase
-                            placeholder="Search…"
+                            sx={{width:'26rem'}}
+                            placeholder="Search here..."
                             inputProps={{ 'aria-label': 'search' }}
-                        />
+                            />
+                            <SearchIconWrapper>
+                            <SearchIcon sx={{color:'#3187ED'}}/>
+                        </SearchIconWrapper>
                     </Search>
                     <Box sx={{ flexGrow: 1 }} />
                     <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                         <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-                            <Badge badgeContent={4} color="error">
-                                <MailIcon />
-                            </Badge>
+                                <AiOutlineHeart />
                         </IconButton>
                         <IconButton
                             size="large"
@@ -188,7 +195,7 @@ const Appbar = () => {
                             color="inherit"
                         >
                             <Badge badgeContent={17} color="error">
-                                <NotificationsIcon />
+                                <RiShoppingBasketLine />
                             </Badge>
                         </IconButton>
                         <IconButton
@@ -202,6 +209,7 @@ const Appbar = () => {
                         >
                             <AccountCircle />
                         </IconButton>
+                        <Button size="md" sx={{backgroundColor:"#00C6D7", marginLeft:'2rem', px:'2rem'}}>Classifieds</Button>
                     </Box>
                     <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
                         <IconButton

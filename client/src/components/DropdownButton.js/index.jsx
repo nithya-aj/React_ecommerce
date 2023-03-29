@@ -8,7 +8,7 @@ const DropdownButton = (props) => {
     <Select
       placeholder={props.placeholder}
       indicator={<KeyboardArrowDown />}
-      sx={{}}
+      sx={{backgroundColor:'#F8F8F8', border:'0', px:'2rem', color:'black'}}
     >
       <Option value="First">First</Option>
       <Option value="Second">Second</Option>
