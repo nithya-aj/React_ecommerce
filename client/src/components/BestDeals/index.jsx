@@ -52,7 +52,7 @@ const BestDeals = () => {
                                         </Typography>
                                     </Box>
                                     <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '12px', gap: '3px' }}>
-                                        <Rating name="size-small" defaultValue={2} size="small" />(12)
+                                        <Rating name="size-small" defaultValue={4} size="small" />(12)
                                     </span>
                                 </CardContent>
                             </Box>
