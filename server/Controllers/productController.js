@@ -2,7 +2,12 @@ import ProductModel from "../Models/productModel.js";
 
 // Add product
 export const addProduct = async (req, res) => {
-    const newPdt = new ProductModel(req.body)
+    const newPdt = new ProductModel({
+        desc: req.body.desc,
+        price: req.body.price,
+        quantity: req.body.quantity,
+        img: req.file.filename
+    })
     try {
         await newPdt.save()
         res.status(200).json(newPdt)

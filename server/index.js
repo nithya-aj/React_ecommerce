@@ -7,6 +7,10 @@ import productRoute from './Routes/productRoute.js'
 
 const app = express();
 
+//to save images for public
+app.use(express.static('public'))
+app.use('/images', express.static("images"))
+
 // Middleware to parse JSON request bodies
 app.use(express.json());
 app.use(cors());
